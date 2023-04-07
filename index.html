@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Form Design</title>
+</head>
+
+<body>
+  <div class="container-fluid bg-medium text-light py-3">
+    <header class="text-center">
+      <h1 class="display-7">Goa University</h1>
+      <h2 class="display-8"> Alumni/Student Registration Form</h2>
+    </header>
+  </div>
+  <section class="container my-2 bg-dark w-50 text-light p-2">
+    <form class="row g-3 p-3" id="form">
+      <div class="col-md-4">
+        <label for="fname" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="fname" placeholder="Enter first name" required>
+      </div>
+      <div class="col-md-4">
+        <label for="lname" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lname" placeholder="Enter last name" required>
+      </div>
+      <div class="col-md-4">
+        <label for="validationDefault03" class="form-label">PR Number</label>
+        <div class="input-group">
+
+          <input type="number" class="form-control" id="validationDefault03" aria-describedby="inputGroupPrepend2"
+            placeholder="Enter personal reg. no." required>
+        </div>
+      </div>
+      <!--  -->
+      <div class="col-md-6">
+        <label for="inputGen" class="form-label">Gender</label>
+        <select id="inputGen" class="form-select" placeholder="choose" required>
+          <option selected> </option>
+          <option>Female</option>
+          <option>Male</option>
+          <option>Others</option>
+        </select>
+      </div>
+      <!--  -->
+
+
+      <div class="col-md-6">
+        <label for="inputDate" class="form-label">Date of Birth</label>
+        <input type="date" class="form-control" id="inputDate" placeholder="choose" required>
+      </div>
+      <!--  -->
+
+      <!--  -->
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Email</label>
+        <input type="email" class="form-control" id="inputEmail4" placeholder=" Enter Email Id" required>
+      </div>
+      <div class="col-md-6">
+        <label for="inputContact4" class="form-label">Contact Number</label>
+        <input type="number" class="form-control" id="inputContact4" placeholder=" Enter Phone Number" required>
+      </div>
+      <div class="col-12">
+        <label for="inputAddress" class="form-label">Address</label>
+        <textarea class="form-control" id="inputAddress" placeholder="Enter address" required></textarea>
+      </div>
+
+      <div class="col-md-6">
+        <label for="inputDept" class="form-label">Department</label>
+        <input type="text" class="form-control" id="inputDept" placeholder="Enter Department" required>
+
+      </div>
+      <div class="col-md-6">
+        <label for="inputCourse" class="form-label">Course </label>
+        <input type="text" class="form-control" id="inputCourse" placeholder="Enter Course" required>
+
+      </div>
+      <!-- -->
+      <div class="col-md-6">
+        <label for="inputYear" class="form-label">Year of Passing</label>
+        <input type="number" class="form-control" id="inputYear" placeholder="Enter Year of Passing" required>
+
+      </div>
+      <!--  -->
+      <div class="col-md-6">
+        <label for="inputGen" class="form-label">Employed</label>
+        <select id="inputWorking" class="form-select"  required>
+          <option selected></option>
+          <option>Yes</option>
+          <option>No</option>
+         
+        </select>
+      </div>
+      
+      <div class="col-12">
+        <label for="inputDescp" class="form-label">If employed, Mention your Job role in the Organisation.</label>
+        <textarea class="form-control" id="inputEmpl" placeholder="Enter here"></textarea>
+      </div>
+	  
+	    <div class="col-md-6">
+        <label for="companyname" class="form-label">Company Name</label>
+        <input type="text" class="form-control" id="companyname" placeholder="Enter Company name" >
+      </div>
+	  
+	     <div class="col-md-6">
+        <label for="experience" class="form-label">Experience</label>
+        <input type="number" class="form-control" id="experience" placeholder=" Enter your experience(yrs)" >
+      </div>
+      <!--  -->
+      <div class="col-11 text-center">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+    
+    <script>
+      const form = document.getElementById("form");
+
+      form.addEventListener("submit", (event) => {
+        event.preventDefault(); // prevent the form from submitting and refreshing the page
+
+        const fname = `${document.getElementById("fname").value}`;
+        const lname = `${document.getElementById("lname").value}`;
+        const prnum = document.getElementById("validationDefault03").value;
+        const gen = document.getElementById("inputGen").value;
+        const phoneNo = document.getElementById("inputContact4").value;
+        const address = document.getElementById("inputAddress").value;
+        const dob = document.getElementById("inputDate").value;
+        const dept = document.getElementById("inputDept").value;
+        const course = document.getElementById("inputCourse").value;
+        const email = document.getElementById("inputEmail4").value;
+        const year = document.getElementById("inputYear").value;
+        const emp = document.getElementById("inputWorking").value;
+		const comp = document.getElementById("companyname").value;
+		const exp = document.getElementById("experience").value;
+        
+        const formattedData = `<br><h1>REGISTERED SUCCESSFULLY!!</h1><br><h2>---YOUR SUBMITTED INFORMATION---</h2>
+  <h3>  Firts Name :        ${fname} 
+  <br>  Last Name :         ${lname}
+  <br>  Gender :            ${gen}
+  <br>  PR Number :         ${prnum}
+  <br>  Date of Birth :     ${dob}
+  <br>  Email :             ${email}
+  <br>  Phone No :          ${phoneNo}
+  <br>  Address :           ${address}
+  <br>  Department :        ${dept}
+  <br>  Course :            ${course}
+  <br>  Year of Passing  :  ${year}
+  <br>  Whether employed :  ${emp}
+  <br>  Company Name    :  ${comp}
+  <br>  Experience :       ${exp}
+  
+  </h3>`;
+
+        const newWindow = window.open("", "_blank");
+        newWindow.document.write(`<pre>${formattedData}</pre>`);
+      });
+    </script>
+    
+    <!--  -->
+  </section>
+</body>
+
+</html>
